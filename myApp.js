@@ -8,7 +8,18 @@ let Person
 const createAndSavePerson = (done) => {
   done(null /*, data*/)
 }
-
+app
+  .route('/booking')
+  .get((req, res) => {
+    const bookid = req.query.bookid
+    const bookType = req.query.bookType
+    res.json({ book: bookid, bookType })
+  })
+  .post((req, res) => {
+    const bookid = req.body.bookid
+    const bookType = req.query.bookType
+    res.json({ book: bookid, bookType })
+  })
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/)
 }
